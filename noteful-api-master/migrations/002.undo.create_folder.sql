@@ -1,0 +1,4 @@
+ALTER TABLE note
+  DROP COLUMN id_folder;
+
+DROP TABLE IF EXISTS folder;

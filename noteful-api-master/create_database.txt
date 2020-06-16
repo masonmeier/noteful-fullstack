@@ -1,0 +1,35 @@
+-- NOTE: "folder" is PARENT with 1 to many CHILD "note" records
+
+-- in Terminal
+
+-- create database user (as superuser):
+createuser -s noteful
+
+-- create database:
+createdb -U noteful noteful
+
+-- create test database:
+createdb  -U noteful noteful-test
+
+-- create tables:
+-- before running migrate make sure src/config.js and .env have database info
+cd /Library/WebServer/Documents/GitHub/Bloc/noteful-api
+
+-- make .env NODE_ENV = production to migrate non-test database
+-- make .env NODE_ENV = test to migrate test database (or just npm run migrate:test )
+
+npm run migrate
+
+-- seed tables:
+psql -U noteful -d noteful -f ./seeds/seed.folder.sql
+psql -U noteful -d noteful -f ./seeds/seed.note.sql
+
+
+-- seed test tables:
+psql -U noteful -d noteful-test -f ./seeds/seed.folder.sql
+psql -U noteful -d noteful-test -f ./seeds/seed.note.sql
+
+
+-- change .env NODE_ENV to "test"
+
+-- switch CLIENT src/config.js to use PostgreSQL databases instead of json.db
