@@ -4,6 +4,7 @@ import config from '../config';
 import NotefulContext from '../NotefulContext';
 
 import ValidationError from '../ValidationError';
+import {createApiUrl} from '../utils/api';
 
 class AddFolder extends React.Component {
 	static contextType = NotefulContext;
@@ -74,7 +75,7 @@ class AddFolder extends React.Component {
 		};
 		this.setState({ apiError: null });
 
-		fetch(config.FOLDERS_ENDPOINT, {
+		fetch(createApiUrl('/folders'), {
 			method: 'POST',
 			body: JSON.stringify(folder),
 			headers: {

@@ -22,6 +22,7 @@ import AddNote from './AddNote/AddNote';
 
 import EditFolder from './EditFolder/EditFolder';
 import EditNote from './EditNote/EditNote';
+import {createApiUrl} from './utils/api';
 
 const routes = [
 	{
@@ -169,7 +170,7 @@ class App extends React.Component {
 	};
 
 	getFolders = () => {
-		fetch(config.FOLDERS_ENDPOINT, {
+		fetch(createApiUrl('/folders'), {
 			method: 'GET',
 			headers: {
 				'content-type': 'application/json',
@@ -189,7 +190,7 @@ class App extends React.Component {
 	};
 
 	getNotes = () => {
-		fetch(config.NOTES_ENDPOINT, {
+		fetch(createApiUrl('/notes'), {
 			method: 'GET',
 			headers: {
 				'content-type': 'application/json',
@@ -230,7 +231,7 @@ class App extends React.Component {
 	};
 
 	handleClickDeleteFolder = (id_folder, props) => {
-		fetch(config.FOLDERS_ENDPOINT + `/${id_folder}`, {
+		fetch(createApiUrl(`/folders/${id_folder}`), {
 			method: 'DELETE',
 			headers: {
 				'content-type': 'application/json',

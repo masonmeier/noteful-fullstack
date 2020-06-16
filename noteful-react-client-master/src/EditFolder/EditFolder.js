@@ -4,6 +4,7 @@ import config from '../config';
 import NotefulContext from '../NotefulContext';
 
 import ValidationError from '../ValidationError';
+import {createApiUrl} from '../utils/api';
 
 class EditFolder extends React.Component {
 	static contextType = NotefulContext;
@@ -22,7 +23,7 @@ class EditFolder extends React.Component {
 	// get folder to be updated
 	componentDidMount() {
 		const { id_folder } = this.props.match.params;
-		fetch(config.FOLDERS_ENDPOINT + `/${id_folder}`, {
+		fetch(createApiUrl(`/folders/${id_folder}`), {
 			method: 'GET',
 			headers: {
 				'content-type': 'application/json',
@@ -107,7 +108,7 @@ class EditFolder extends React.Component {
 
 		this.setState({ apiError: null });
 
-		fetch(config.FOLDERS_ENDPOINT + `/${id_folder}`, {
+		fetch(createApiUrl(`/folders/${id_folder}`), {
 			method: 'PATCH',
 			body: JSON.stringify(newFolder),
 			headers: {

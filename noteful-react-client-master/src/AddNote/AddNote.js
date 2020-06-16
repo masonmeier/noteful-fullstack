@@ -4,6 +4,7 @@ import config from '../config';
 import NotefulContext from '../NotefulContext';
 
 import ValidationError from '../ValidationError';
+import {createApiUrl} from '../utils/api';
 
 class AddNote extends React.Component {
 	static contextType = NotefulContext;
@@ -104,7 +105,7 @@ class AddNote extends React.Component {
 		};
 		this.setState({ apiError: null });
 
-		fetch(config.NOTES_ENDPOINT, {
+		fetch(createApiUrl('/notes'), {
 			method: 'POST',
 			body: JSON.stringify(note),
 			headers: {

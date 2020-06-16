@@ -3,6 +3,7 @@ import { NavLink } from 'react-router-dom';
 
 import config from '../config';
 import NotefulContext from '../NotefulContext';
+import {createApiUrl} from '../utils/api';
 
 // this function 1st deletes via the API, then from state
 // context.deleteNote = the update function, to update state in context
@@ -13,7 +14,7 @@ import NotefulContext from '../NotefulContext';
 function handleClickDelete(props, context) {
 	const noteId = props.note.id;
 
-	fetch(config.NOTES_ENDPOINT + `/${noteId}`, {
+	fetch(createApiUrl(`/notes/${noteId}`), {
 		method: 'DELETE',
 		headers: {
 			'content-type': 'application/json'

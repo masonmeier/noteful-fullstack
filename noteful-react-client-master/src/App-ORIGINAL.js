@@ -23,6 +23,7 @@ import AddNote from './AddNote/AddNote';
 
 import EditFolder from './EditFolder/EditFolder';
 import EditNote from './EditNote/EditNote';
+import {createApiUrl} from './utils/api';
 
 const routes = [
 	{
@@ -146,7 +147,7 @@ const App = props => {
     */
 
 	const getFolders = () => {
-		fetch(config.FOLDERS_ENDPOINT, {
+		fetch(createApiUrl('/folders'), {
 			method: 'GET',
 			headers: {
 				'content-type': 'application/json',
@@ -166,7 +167,7 @@ const App = props => {
 	};
 
 	const getNotes = () => {
-		fetch(config.NOTES_ENDPOINT, {
+		fetch(createApiUrl('/notes'), {
 			method: 'GET',
 			headers: {
 				'content-type': 'application/json',
@@ -208,7 +209,7 @@ const App = props => {
 		// to stop submit of EditFolder form since deleteFolder button is inside the form
 		setDeletedFolderId(id_folder);
 
-		fetch(config.FOLDERS_ENDPOINT + `/${id_folder}`, {
+		fetch(createApiUrl(`/folders/${id_folder}`), {
 			method: 'DELETE',
 			headers: {
 				'content-type': 'application/json',

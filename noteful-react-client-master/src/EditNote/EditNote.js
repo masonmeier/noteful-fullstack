@@ -4,6 +4,7 @@ import config from '../config';
 import NotefulContext from '../NotefulContext';
 
 import ValidationError from '../ValidationError';
+import {createApiUrl} from '../utils/api';
 
 class EditNote extends React.Component {
 	static contextType = NotefulContext;
@@ -33,7 +34,7 @@ class EditNote extends React.Component {
 	// get note to be updated
 	componentDidMount() {
 		const { noteId } = this.props.match.params;
-		fetch(config.NOTES_ENDPOINT + `/${noteId}`, {
+		fetch(createApiUrl(`/notes/${noteId}`), {
 			method: 'GET',
 			headers: {
 				'content-type': 'application/json',
@@ -160,7 +161,7 @@ class EditNote extends React.Component {
 
 		this.setState({ apiError: null });
 
-		fetch(config.NOTES_ENDPOINT + `/${noteId}`, {
+		fetch(createApiUrl(`/notes/${noteId}`), {
 			method: 'PATCH',
 			body: JSON.stringify(newNote),
 			headers: {
@@ -179,7 +180,6 @@ class EditNote extends React.Component {
 				this.props.history.push(`/folders/${this.state.id_folder}`);
 			})
 			.catch(error => {
-				error(error);
 				this.setState({ apiError: error });
 			});
 	};
@@ -189,7 +189,7 @@ class EditNote extends React.Component {
 		const folders = this.context.folders;
 
 		if (this.state.apiError) {
-			return <p className="error">{this.state.apiError}</p>;
+			return <p className="error">{String(this.state.apiError)}</p>;
 		}
 
 		return (
