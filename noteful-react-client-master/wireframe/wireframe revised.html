@@ -1,0 +1,492 @@
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<meta http-equiv="X-UA-Compatible" content="ie=edge" />
+		<title>Noteful Wireframe</title>
+		<meta
+			name="description"
+			content="React Noteful App - create folders and notes."
+		/>
+		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+
+		<!-- fonts -->
+		<link
+			href="https://fonts.googleapis.com/css?family=Handlee&display=swap"
+			rel="stylesheet"
+		/>
+
+		<!-- reset -->
+		<link
+			rel="stylesheet"
+			href="https://cdnjs.cloudflare.com/ajax/libs/normalize/4.2.0/normalize.min.css"
+		/>
+
+		<!-- styles -->
+		<style>
+			* {
+				box-sizing: border-box;
+				margin: 0;
+				padding: 0;
+			}
+
+			body {
+				background-color: #fff;
+				color: #222;
+				font-family: 'Handlee', cursive;
+				font-size: 18px;
+				line-height: 1.6;
+				text-align: left;
+			}
+
+			/*
+----------------------------------------------------------------
+	=Links
+---------------------------------------------------------------- */
+
+			a:link,
+			a:visited {
+				color: #004c82;
+				text-decoration: underline;
+				font-weight: 400;
+			}
+			a:hover,
+			a:focus {
+				color: #0274be;
+				text-decoration: none;
+			}
+
+			header {
+				display: flex;
+				justify-content: space-around;
+				flex-wrap: wrap;
+				align-items: center;
+				background-color: #004c82;
+			}
+			header *,
+			header h1,
+			nav {
+				color: #fff;
+			}
+			header h1 {
+				font-size: 42px;
+				line-height: 1;
+			}
+
+			/* *********** media queries *********** */
+			/* wider width */
+			@media all and (max-width: 678px) {
+				header h1 {
+					font-size: 42px;
+				}
+			}
+
+			nav {
+				display: flex;
+				flex-wrap: wrap;
+				justify-content: space-between;
+				background-color: #004c82;
+			}
+			@media screen and (max-width: 678px) {
+				nav {
+					display: none;
+				}
+			}
+
+			nav span {
+				color: #444;
+				background-color: #eee;
+				font-size: 12px;
+				text-decoration: none;
+				letter-spacing: 2px;
+				text-transform: uppercase;
+				margin-bottom: 0px;
+				padding: 20px;
+			}
+
+			h2,
+			h3,
+			h4,
+			h5,
+			h6 {
+				margin-top: 0;
+				margin-bottom: 8px;
+			}
+
+			p {
+				margin-top: 0;
+				margin-bottom: 16px;
+			}
+
+			h1 {
+				color: #222;
+				font-size: 48px;
+				font-weight: 400;
+			}
+			h2 {
+				color: #004c82;
+				font-size: 30px;
+				font-weight: 400;
+				margin-left: 10px;
+			}
+			h3 {
+				color: #444;
+				font-size: 24px;
+				font-weight: 400;
+			}
+
+			b,
+			strong {
+				font-weight: bolder;
+			}
+
+			small {
+				font-size: 80%;
+			}
+			pre,
+			code {
+				margin: 0 0 16px 0px;
+			}
+			kbd {
+				background-color: #212529;
+				border-radius: 3px;
+				padding: 3px 6px;
+				margin: 2px;
+				color: #fff;
+			}
+
+			/*
+----------------------------------------------------------------
+	=Form
+---------------------------------------------------------------- */
+
+			form {
+				font-family: 'Handlee', cursive;
+				font-size: 18px;
+			}
+
+			input,
+			select,
+			textarea {
+				margin: 2px 0 16px 0px;
+			}
+
+			input[type='text'],
+			select,
+			textarea {
+				color: #666;
+				width: 80%;
+				height: 32px;
+				border: 1px solid #ddd;
+				padding: 6px;
+			}
+
+			textarea {
+				color: #666;
+				height: 72px;
+			}
+
+			fieldset {
+				border: none;
+				margin-bottom: 8px;
+			}
+
+			legend {
+				font-size: 24px;
+				margin-bottom: 0;
+			}
+
+			label {
+				display: block;
+				margin: 0;
+			}
+
+			.btn-add {
+				color: #fff;
+				background-color: #0095ff;
+				border: 1px solid #07c;
+				box-shadow: inset 0 1px 0 #66bfff;
+				font-weight: bold;
+				font-size: 24px;
+				text-align: center;
+				border-radius: 50%;
+				height: 40px;
+				width: 40px;
+				cursor: pointer;
+			}
+
+			.btn-add:hover,
+			.btn-add:focus {
+				background-color: #005fa3;
+			}
+
+			.btn-save {
+				background: #0095ff;
+				color: #fff;
+				border: 2px solid #07c;
+				font-weight: bold;
+				font-size: 14px;
+				padding: 5px 10px;
+				cursor: pointer;
+			}
+
+			.btn-save:hover,
+			.btn-add:focus {
+				background-color: #005fa3;
+			}
+
+			.btn-delete {
+				background: #ff0095;
+				color: #fff;
+				border: 2px solid #cc0077;
+				font-weight: bold;
+				font-size: 14px;
+				padding: 5px 10px;
+				cursor: pointer;
+			}
+
+			.btn-delete:hover,
+			.btn-delete:focus {
+				background-color: #a3005f;
+			}
+
+			article ul {
+				list-style: none;
+			}
+			article li {
+				padding: 10px 10px 0 10px;
+				border-bottom: 1px solid #aaa;
+				cursor: pointer;
+			}
+
+			aside ul {
+				list-style: none;
+				margin-top: 20px;
+			}
+
+			aside li {
+				padding: 10px 10px 0 10px;
+				border-bottom: 1px solid #aaa;
+				cursor: pointer;
+			}
+
+			aside li:hover {
+				background-color: yellow;
+			}
+
+			aside li.active {
+				background-color: #fff;
+			}
+
+			/* closed folder */
+			aside ul li:before {
+				content: '\1F4C1';
+				margin-right: 5px;
+			}
+
+			/* open folder */
+			aside ul li:before {
+				content: '\1F4C2';
+				margin-right: 5px;
+			}
+
+			/* default row container */
+			main {
+				display: flex;
+				flex-wrap: wrap;
+			}
+
+			/* responsive layout - when screen is less than 680px wide make the 2 columns stack on top of each other instead of next to each other */
+			@media screen and (max-width: 678px) {
+				main,
+				nav {
+					flex-direction: column;
+				}
+			}
+
+			/* create 2 unequal columns side-by-side */
+			/* sidebar left column */
+			aside {
+				flex: 1;
+				background-color: #ddf1ff;
+				padding: 20px 0 20px 10px;
+			}
+
+			/* main column */
+			section {
+				flex: 4;
+				padding: 20px 0 20px 10px;
+				margin-bottom: 20px;
+			}
+
+			article {
+				margin-bottom: 20px;
+				margin: 0 20px 20px 0;
+				padding: 10px;
+				border: 1px solid #aaa;
+			}
+
+			footer {
+				background-color: #fff;
+				border-top: 1px solid #ccc;
+				padding: 20px;
+				text-align: center;
+			}
+
+			.header-container {
+				display: flex;
+				justify-content: flex-start;
+				align-items: baseline;
+			}
+
+			.button-container {
+				display: flex;
+				justify-content: space-between;
+				align-items: center;
+			}
+
+			.note-datemod {
+			}
+
+			.note-item {
+			}
+
+			.note-content {
+			}
+			
+			.note {
+			display: flex;
+			flex-direction:column;
+			border: 1px solid red;
+			}
+		</style>
+	</head>
+	<body>
+		<header>
+			<span>
+				<h1>Noteful</h1>
+			</span>
+			<span>
+				a React App
+			</span>
+		</header>
+
+		<!--
+<nav>
+	<span></span>
+</nav>
+-->
+
+		<main>
+			<aside>
+				<!-- folders -->
+
+				<div class="header-container">
+					<span
+						><h2><a href="/">Folders</a></h2></span
+					>&nbsp;&nbsp;
+					<span><button class="btn-add">+</button></span>
+				</div>
+
+				<ul aria-live="polite">
+					<li>Lorem ipsum dolor sit amet, consectetur adipisicing elit</li>
+					<li class="active">Lorem ipsum dolor sit</li>
+					<li>item</li>
+					<li>item</li>
+				</ul>
+
+				<br />
+				<button class="btn-save">Go Back</button>
+			</aside>
+
+			<section>
+				<!-- notes -->
+
+				<div class="header-container">
+					<span
+						><h2><a href="/">Notes</a></h2></span
+					>&nbsp;&nbsp;
+					<span><button class="btn-add">+</button></span>
+				</div>
+
+				<article>
+					<ul>
+						<li>
+						<div class="note">
+							<div class="note-item">
+								   <h3><a href="/">Note Title</a></h3>
+
+								   <div class="button-container">
+									   <span>Modified on 3rd Jan 2019</span>
+									   <span><button class="btn-delete">-</button></span>
+								   </div>
+							</div>
+
+							<p class="note-content">
+								Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+								Pellentesque lacinia dapibus blandit. Morbi ut ipsum non dolor
+								suscipit euismod. Phasellus bibendum tortor vitae neque blandit
+								tempor. Praesent nibh mi, placerat semper ornare et, malesuada
+								id dolor. Nulla facilisi. Praesent quis massa at sapien
+								efficitur sollicitudin. Sed sollicitudin mollis eros non
+								pretium. Maecenas malesuada velit in venenatis fringilla.
+							</p>
+						</div>
+						</li>
+
+						<li>
+							<h3><a href="/">Note Title</a></h3>
+
+							<div class="button-container">
+								<span>Modified on 3rd Jan 2019</span>
+								<span><button class="btn-delete">-</button></span>
+							</div>
+
+							<p class="note-content">
+								Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+								Pellentesque lacinia dapibus blandit. Morbi ut ipsum non dolor
+								suscipit euismod. Phasellus bibendum tortor vitae neque blandit
+								tempor. Praesent nibh mi, placerat semper ornare et, malesuada
+								id dolor. Nulla facilisi. Praesent quis massa at sapien
+								efficitur sollicitudin. Sed sollicitudin mollis eros non
+								pretium. Maecenas malesuada velit in venenatis fringilla.
+							</p>
+						</li>
+					</ul>
+				</article>
+
+				<!-- NEW NOTE FORM -->
+				<form action="" method="post">
+					<fieldset>
+						<legend>New Note</legend>
+
+						<label for="title">Title</label>
+						<input type="text" name="title" />
+
+						<label for="description">Description</label>
+						<textarea name="description"></textarea>
+						<br />
+						<button class="btn-save">Save Note</button>
+					</fieldset>
+				</form>
+
+				<!-- NEW FOLDER FORM -->
+				<form action="" method="post">
+					<fieldset>
+						<legend>New Folder</legend>
+
+						<label for="folderName">Label</label>
+						<input type="text" name="folderName" />
+						<br />
+						<button class="btn-save">Save Folder</button>
+					</fieldset>
+				</form>
+			</section>
+		</main>
+
+		<footer>
+			&copy; 2019
+			<a href="http://www.asktami.com" target="_blank">Tami Williams</a>
+		</footer>
+	</body>
+</html>

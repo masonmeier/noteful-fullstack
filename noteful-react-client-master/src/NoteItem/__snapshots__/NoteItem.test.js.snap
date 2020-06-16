@@ -1,0 +1,113 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`NoteItem component renders a NoteItem by default 1`] = `
+<div
+  className="note-item"
+>
+  <NavLink
+    to={
+      Object {
+        "pathname": "/notes/1",
+        "props": Object {
+          "note": Object {
+            "id": 1,
+            "id_folder": 101,
+            "modified": 2019-09-30T04:00:00.000Z,
+            "title": "test-note-title",
+          },
+        },
+      }
+    }
+  >
+    <h3 />
+  </NavLink>
+  <div
+    className="button-container"
+  >
+    <span>
+      Modified on
+       
+      <span
+        className="note-datemod"
+      >
+         
+        Mon Sep 30 2019 00:00:00 GM
+      </span>
+    </span>
+    <span>
+      <NavLink
+        to="/edit-note/1"
+      >
+        <button
+          className="btn-edit-note"
+        >
+          ✎
+        </button>
+      </NavLink>
+         
+      <button
+        className="btn-delete-note"
+        onClick={[Function]}
+      >
+        -
+      </button>
+    </span>
+  </div>
+</div>
+`;
+
+exports[`NoteItem component renders the NoteItem given props 1`] = `
+<div
+  className="note-item"
+>
+  <NavLink
+    to={
+      Object {
+        "pathname": "/notes/1",
+        "props": Object {
+          "note": Object {
+            "id": 1,
+            "id_folder": 101,
+            "modified": 2019-09-30T04:00:00.000Z,
+            "title": "test-note-title",
+          },
+        },
+      }
+    }
+  >
+    <h3 />
+  </NavLink>
+  <div
+    className="button-container"
+  >
+    <span>
+      Modified on
+       
+      <span
+        className="note-datemod"
+      >
+         
+        Mon Sep 30 2019 00:00:00 GM
+      </span>
+    </span>
+    <span>
+      <NavLink
+        to="/edit-note/1"
+      >
+        <button
+          className="btn-edit-note"
+        >
+          ✎
+        </button>
+      </NavLink>
+         
+      <button
+        className="btn-delete-note"
+        onClick={[Function]}
+      >
+        -
+      </button>
+    </span>
+  </div>
+</div>
+`;

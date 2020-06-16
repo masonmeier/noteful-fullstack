@@ -1,0 +1,442 @@
+@import url('https://fonts.googleapis.com/css?family=Handlee&display=swaps');
+
+* {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+
+body,
+input,
+select,
+textarea {
+	background-color: #fff;
+	color: #222;
+	font-family: 'Handlee', cursive;
+	font-size: 18px;
+	line-height: 1.6;
+	text-align: left;
+}
+
+@media screen and (-webkit-min-device-pixel-ratio: 0) {
+	/*safari and chrome*/
+	select {
+		height: 40px;
+		line-height: 40px;
+	}
+}
+select::-moz-focus-inner {
+	/*Remove button padding in FF*/
+	border: 0;
+	padding: 0;
+}
+@-moz-document url-prefix() {
+	/* targets Firefox only */
+	select {
+		padding: 0px 0 !important;
+	}
+}
+@media screen\0 {
+	/* IE Hacks: targets IE 8, 9 and 10 */
+	select {
+		height: 40px;
+		line-height: 40px;
+	}
+}
+
+a:link,
+a:visited {
+	color: #004c82;
+	text-decoration: underline;
+	font-weight: 400;
+}
+a:hover,
+a:focus {
+	color: #0274be;
+	text-decoration: underline;
+}
+
+header {
+	display: flex;
+	justify-content: space-around;
+	flex-wrap: wrap;
+	align-items: center;
+	background-color: #004c82;
+	padding: 20px;
+}
+
+header *,
+header h1 {
+	color: #fff;
+}
+header h1 {
+	font-size: 42px;
+	line-height: 1;
+}
+header a:link,
+header a:visited {
+	text-decoration: underline;
+	color: #fff;
+}
+header a:hover,
+header a:focus {
+	text-decoration: underline;
+}
+
+h2,
+h3,
+h4,
+h5,
+h6 {
+	margin-top: 0;
+	margin-bottom: 8px;
+}
+
+p {
+	margin: 20px 0;
+}
+
+h1 {
+	color: #222;
+	font-size: 48px;
+	font-weight: 400;
+}
+h2 {
+	color: #004c82;
+	font-size: 30px;
+	font-weight: 400;
+	margin-left: 10px;
+}
+h3 {
+	color: #444;
+	font-size: 24px;
+	font-weight: 400;
+}
+
+b,
+strong {
+	font-weight: bolder;
+}
+
+small {
+	font-size: 80%;
+}
+
+form {
+	font-family: 'Handlee', cursive;
+	font-size: 18px;
+}
+
+input,
+select,
+textarea {
+	margin: 2px 0 16px 0px;
+}
+
+input[type='text'],
+select,
+textarea {
+	color: #666;
+	width: 80%;
+	height: 32px;
+	border: 1px solid #ddd;
+	padding: 6px;
+}
+
+textarea {
+	overflow-y: scroll;
+	min-height: 30vh;
+}
+
+fieldset {
+	border: none;
+	margin-bottom: 8px;
+}
+
+legend {
+	font-size: 24px;
+	margin-bottom: 0;
+}
+
+label {
+	display: block;
+	margin: 0;
+}
+
+.btn-add {
+	color: #fff;
+	background-color: #005999;
+	border: 1px solid #006644;
+	box-shadow: inset 0 1px 0 #006644;
+	font-weight: bold;
+	font-size: 24px;
+	text-align: center;
+	border-radius: 50%;
+	height: 40px;
+	width: 40px;
+	cursor: pointer;
+}
+
+.btn-add:hover,
+.btn-add:focus {
+	background-color: #006644;
+}
+
+.btn-edit {
+	color: #fff;
+	background-color: #005999;
+	border: 1px solid #006644;
+	box-shadow: inset 0 1px 0 #006644;
+	font-weight: bold;
+	font-size: 24px;
+	text-align: center;
+	border-radius: 50%;
+	height: 40px;
+	width: 40px;
+	cursor: pointer;
+}
+
+.btn-edit:hover,
+.btn-edit:focus {
+	background-color: #006644;
+}
+
+.btn-delete {
+	color: #fff;
+	background-color: #ff0095;
+	border: 1px solid #cc0077;
+	font-weight: bold;
+	font-size: 24px;
+	text-align: center;
+	border-radius: 50%;
+	height: 40px;
+	width: 40px;
+	cursor: pointer;
+}
+.btn-delete:hover,
+.btn-delete:focus {
+	background-color: #a3005f;
+}
+
+.btn-delete-folder {
+	background: #ff0095;
+	color: #fff;
+	border: 2px solid #cc0077;
+	font-weight: bold;
+	font-size: 14px;
+	padding: 5px 10px;
+	cursor: pointer;
+}
+
+.btn-delete-folder:hover,
+.btn-delete-folder:focus {
+	background-color: #a3005f;
+}
+
+.btn-cancel {
+	background: #58585a;
+	color: #fff;
+	border: 2px solid #000;
+	font-weight: bold;
+	font-size: 14px;
+	padding: 5px 10px;
+	cursor: pointer;
+}
+
+.btn-cancel:hover,
+.btn-cancel:focus {
+	background-color: #363637;
+}
+
+.btn-save {
+	background: #005999;
+	color: #fff;
+	border: 2px solid #006644;
+	font-weight: bold;
+	font-size: 14px;
+	padding: 5px 10px;
+	cursor: pointer;
+}
+
+.btn-save:hover,
+.btn-save:focus {
+	background-color: #006644;
+}
+
+.btn-save:disabled,
+.btn-save[disabled] {
+	border: 1px solid #999999;
+	background-color: #cccccc;
+	color: #666666;
+}
+
+.btn-delete-note {
+	background: #ff0095;
+	color: #fff;
+	border: 2px solid #cc0077;
+	font-weight: bold;
+	font-size: 16px;
+	padding: 5px 10px;
+	cursor: pointer;
+}
+
+.btn-delete-note:hover,
+.btn-delete-note:focus {
+	background-color: #a3005f;
+}
+
+.btn-edit-note {
+	background: #005999;
+	color: #fff;
+	border: 2px solid #006644;
+	font-weight: bold;
+	font-size: 14px;
+	padding: 5px 10px;
+	cursor: pointer;
+}
+
+.btn-edit-note:hover,
+.btn-edit-note:focus {
+	background-color: #006644;
+}
+
+section ul {
+	list-style: none;
+}
+section li {
+	padding: 10px 10px 0 10px;
+	border-bottom: 1px solid #aaa;
+	cursor: pointer;
+}
+
+.aside ul {
+	list-style: none;
+	margin: 20px 0 0 0;
+}
+
+.aside li a:link {
+	display: block;
+	padding: 10px 10px 0 10px;
+	border-bottom: 1px solid #aaa;
+	cursor: pointer;
+	text-decoration: none;
+	padding-left: 20px;
+}
+.aside li:hover {
+	background-color: yellow;
+}
+.aside .active {
+	background-color: #fff;
+}
+
+/*
+// closed folder
+.aside ul li:before {
+	content: '\1F4C1';
+	margin-right: 5px;
+}
+
+// open folder
+.aside ul li:before {
+	content: '\1F4C2';
+	margin-right: 5px;
+}
+*/
+
+/* default row container */
+main {
+	display: flex;
+	flex-wrap: wrap;
+}
+
+/* responsive layout - when screen is less than 680px wide make the 2 columns stack on top of each other instead of next to each other */
+@media screen and (max-width: 678px) {
+	main,
+	nav {
+		flex-direction: column;
+	}
+}
+
+/* create 2 unequal columns side-by-side */
+/* sidebar left column */
+.aside {
+	flex: 1;
+	background-color: #ddf1ff;
+	padding-top: 20px;
+}
+
+/* main column */
+article {
+	flex: 4;
+	margin-bottom: 20px;
+	padding-left: 20px;
+	padding-top: 20px;
+	min-height: 80vh; /* stretch height to fill viewport & show footer */
+}
+
+section {
+	margin-bottom: 20px;
+	margin: 0 20px 20px 0;
+	padding: 10px;
+	border: 1px solid #aaa;
+}
+
+footer {
+	background-color: #fff;
+	border-top: 1px solid #ccc;
+	padding: 20px;
+	text-align: center;
+}
+
+.aside > header {
+	display: flex;
+	justify-content: flex-start;
+	align-items: center;
+	align-items: baseline;
+	background-color: #ddf1ff;
+}
+
+article > header {
+	display: flex;
+	justify-content: flex-start;
+	align-items: center;
+	align-items: baseline;
+	background-color: #fff;
+}
+
+.button-container {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.note-datemod {
+}
+.note-item {
+}
+.note-content {
+}
+.note {
+	display: flex;
+	flex-direction: column;
+}
+
+.error {
+	color: #b30000;
+}
+
+header a:focus {
+	outline: solid;
+	outline-color: #fff;
+}
+
+/* to make edit-folder delete button appear as if it is inside the form */
+article {
+	position: relative;
+}
+
+.btn-position {
+	position: absolute;
+	top: 137px;
+	left: 205px;
+}

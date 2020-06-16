@@ -1,0 +1,20 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Header component renders a Header by default 1`] = `
+<header>
+  <span>
+    <h1>
+      <Link
+        to="/"
+      >
+        Noteful
+      </Link>
+    </h1>
+  </span>
+  <span>
+    a React app
+    <br />
+    (everything takes a couple of seconds to load)
+  </span>
+</header>
+`;

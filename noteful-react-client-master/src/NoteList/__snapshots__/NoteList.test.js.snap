@@ -1,0 +1,73 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`NoteList component renders a NoteList by default 1`] = `
+<Fragment>
+  <header>
+    <h2>
+      Notes
+    </h2>
+      
+    <NavLink
+      to={
+        Object {
+          "pathname": "/add-note",
+          "state": Object {
+            "id_folder": "101",
+          },
+        }
+      }
+    >
+      <button
+        className="btn-add"
+      >
+        +
+      </button>
+    </NavLink>
+  </header>
+  <section
+    className="no-border"
+  >
+    <div
+      className="note"
+    >
+      No notes in this folder.
+    </div>
+  </section>
+</Fragment>
+`;
+
+exports[`NoteList component renders the NoteList given props 1`] = `
+<Fragment>
+  <header>
+    <h2>
+      Notes
+    </h2>
+      
+    <NavLink
+      to={
+        Object {
+          "pathname": "/add-note",
+          "state": Object {
+            "id_folder": "101",
+          },
+        }
+      }
+    >
+      <button
+        className="btn-add"
+      >
+        +
+      </button>
+    </NavLink>
+  </header>
+  <section
+    className="no-border"
+  >
+    <div
+      className="note"
+    >
+      No notes in this folder.
+    </div>
+  </section>
+</Fragment>
+`;

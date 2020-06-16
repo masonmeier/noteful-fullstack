@@ -1,0 +1,15 @@
+{
+	"version": 2,
+	"alias": "noteful-react-client",
+	"name": "noteful-react-client",
+	"routes": [
+		{
+			"src": "^/static/(.*)",
+			"dest": "/static/$1"
+		},
+		{
+			"src": ".*",
+			"dest": "/index.html"
+		}
+	]
+}

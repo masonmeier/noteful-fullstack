@@ -1,0 +1,67 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Note component renders a Note by default 1`] = `
+<section>
+  <div
+    className="note"
+  >
+    <NoteItem
+      match={
+        Object {
+          "params": Object {
+            "noteId": "1",
+          },
+        }
+      }
+      note={Object {}}
+      notes={
+        Array [
+          Object {
+            "content": "test-note-content",
+            "id": "1",
+            "id_folder": "101",
+            "modified": 2019-09-30T04:00:00.000Z,
+            "name": "test-note-title",
+          },
+        ]
+      }
+    />
+    <p
+      className="note-content"
+    />
+  </div>
+</section>
+`;
+
+exports[`Note component renders the Note given props 1`] = `
+<section>
+  <div
+    className="note"
+  >
+    <NoteItem
+      match={
+        Object {
+          "params": Object {
+            "noteId": "1",
+          },
+        }
+      }
+      note={Object {}}
+      notes={
+        Array [
+          Object {
+            "content": "test-note-content",
+            "id": "1",
+            "id_folder": "101",
+            "modified": 2019-09-30T04:00:00.000Z,
+            "name": "test-note-title",
+          },
+        ]
+      }
+    />
+    <p
+      className="note-content"
+    />
+  </div>
+</section>
+`;

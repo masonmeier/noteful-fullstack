@@ -1,0 +1,5 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`FolderItem component renders a FolderItem by default 1`] = `"Sorry, no note found."`;
+
+exports[`FolderItem component renders the FolderItem given props 1`] = `"Sorry, no note found."`;

@@ -1,0 +1,77 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`FolderList component renders a FolderList by default 1`] = `
+<Fragment>
+  <header>
+    <h2>
+      Folders
+    </h2>
+      
+    <NavLink
+      to="/add-folder"
+    >
+      <button
+        className="btn-add"
+      >
+        +
+      </button>
+    </NavLink>
+      
+    <NavLink
+      to="/edit-folder/101"
+    >
+      <button
+        className="btn-edit"
+      >
+        ✎
+      </button>
+    </NavLink>
+      
+    <button
+      className="btn-delete"
+      onClick={[Function]}
+    >
+      -
+    </button>
+  </header>
+  <ul />
+</Fragment>
+`;
+
+exports[`FolderList component renders the FolderList given props 1`] = `
+<Fragment>
+  <header>
+    <h2>
+      Folders
+    </h2>
+      
+    <NavLink
+      to="/add-folder"
+    >
+      <button
+        className="btn-add"
+      >
+        +
+      </button>
+    </NavLink>
+      
+    <NavLink
+      to="/edit-folder/101"
+    >
+      <button
+        className="btn-edit"
+      >
+        ✎
+      </button>
+    </NavLink>
+      
+    <button
+      className="btn-delete"
+      onClick={[Function]}
+    >
+      -
+    </button>
+  </header>
+  <ul />
+</Fragment>
+`;
