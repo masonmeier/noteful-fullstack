@@ -1,13 +1,3 @@
-# noteful-react-client
-
-![Noteful screenshot](https://github.com/asktami/noteful-react-client/blob/master/noteful.png 'Noteful')
-
-[View Live](https://noteful-react-client.asktami.now.sh/)
-
-## Description
-
-Works with [https://github.com/asktami/noteful-api](https://github.com/asktami/noteful-api).
-
 There are 3 routes: the main route, the dynamic folder route and a dynamic note route.
 
 - Each route should have a header, main section, and a sidebar section
@@ -41,8 +31,6 @@ There are 3 routes: the main route, the dynamic folder route and a dynamic note 
 - Zeit
 
 ## Setup
-
-1. See [https://github.com/asktami/noteful-api](https://github.com/asktami/noteful-api) for instructions on installing the backend API
 
 2. Clone this repo
 
